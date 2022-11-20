@@ -1,0 +1,71 @@
+from os import system
+def tipoDeVehiculo():
+    
+    print('c: coche')
+    print('m: moto')
+    correcto = False
+    while( correcto == False ): 
+        num = input('que tipo de vehiculo quieres?:')
+        if num == 'c' or num == 'm':
+            correcto = True
+            system("cls")
+        else :
+            system("cls")
+            print('introduce c o m')
+    return num
+
+def queColor():
+    
+    print('a: amarillo')
+    print('r: rojo')
+    print('az: azul')
+    print('b: blanco')
+    correcto = False
+    
+    while( correcto == False ):
+        color = input('que color lo quieres?: ')
+        if color == 'a':
+            colorVehiculo = 'amarillo'
+            correcto = True
+            system("cls")
+        elif color == 'r':
+            colorVehiculo = 'rojo'
+            correcto = True
+            system("cls")
+        elif color == 'az':
+            colorVehiculo = 'azul'
+            correcto = True
+            system("cls")
+        elif color == 'b':
+            colorVehiculo = 'blanco'
+            correcto = True
+            system("cls")
+        else:
+            print('introduce un color disponible')
+    return colorVehiculo
+tipoDeVehiculo = tipoDeVehiculo()
+tipoDeColor = queColor()
+
+class Vehículo:
+    Ruedas = ''
+    Puertas = ''
+    Color = tipoDeColor
+    if tipoDeVehiculo == 'c':
+        Ruedas = 4
+        Puertas = 4
+        
+    elif tipoDeVehiculo == 'm':
+        Ruedas = 2
+        Puertas = 0
+
+
+class Coche(Vehículo):
+    Velocidad =''
+    Cilindrada =''
+
+coche = Coche()
+print(coche.Puertas)
+print(coche.Ruedas)
+print(coche.Color)
+print(coche)
+
